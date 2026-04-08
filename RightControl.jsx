@@ -1,24 +1,40 @@
-// 
-
-
-
 import React from 'react'
 
-function RightControl() {
-    return (
-        <div className="w-[80px] h-[240px] border-4 border-solid  relative">
 
-            { <div className="absolute top-6 left-1/2 -translate-x-1/2 w-14 h-14 relative">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-5 h-5 border-2 rounded-full"></div>
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-5 h-5 border-2 rounded-full"></div>
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-5 h-5 border-2 rounded-full"></div>
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-5 h-5 border-2 rounded-full"></div>
-            </div> }
+function RightControl({handleSelection}) {
+  return (
+    <div className="relative w-[100px] h-[240px] border-4 rounded-r-3xl border-solid bg-red-500">
 
-            <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-10 h-10 border-4 rounded-full"></div>
+        <div className="absolute -top-4 left-1 w-20 h-4 bg-black rounded-t-xl"></div>
+
+        <button className="absolute top-0 right-17 w-5 h-5 text-gray text-2xl bg-transparent">+</button>
+
+        <div className="absolute top-7 absolute left-1.5 relative w-20 h-20">
+
+            <button className="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center text-white text-xs">X</button>
+
+
+            <button className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center text-white text-xs">B</button>
+
+
+            <button className="absolute left-0 top-1/2 -translate-y-1/2 w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center text-white text-xs">Y</button>
+
+
+            <button 
+            onClick={handleSelection} 
+            className="absolute right-0 top-1/2 -translate-y-1/2 w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center text-white text-xs">A</button>
+        </div>
+
+        <div className="absolute top-9 absolute left-6 relative w-20 h-20">
+
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white text-xs"></div>
 
         </div>
-    )
+
+        <div className="absolute left-2 top-49 -translate-y-1/2 w-5 h-5 bg-gray-800 rounded-full flex items-center justify-center text-white text-xs border-white border border-gray-400"></div>
+
+    </div>
+  )
 }
 
 export default RightControl
